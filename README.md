@@ -1,2 +1,2 @@
 # Food Delivery System
-WebSocket service setup for GPS tracking.
+WebSocket service for GPS tracking active.
