@@ -663,7 +663,7 @@ function renderDevOpsView(container) {
         </div>
         <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
           <div style="font-weight: 700; color: var(--accent-green); margin-bottom: 0.3rem;">📊 Grafana Dashboards</div>
-          <div style="font-size: 0.85rem; color: var(--text-muted);">Auto-provisioned Dashboards & Prometheus Data Source (Port 3001)</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Auto-provisioned Dashboards & Prometheus Data Source (Port 3002)</div>
         </div>
       </div>
     </div>

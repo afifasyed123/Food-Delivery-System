@@ -14,11 +14,11 @@ services:
     networks:
       - food_delivery_net
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/health"]
-      interval: 10s
-      timeout: 5s
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:5000/health"]
+      interval: 5s
+      timeout: 3s
       retries: 3
-      start_period: 5s
+      start_period: 3s
 
   # Frontend Web Application & Nginx Reverse Proxy
   frontend:
@@ -60,7 +60,7 @@ services:
     container_name: food_delivery_grafana
     restart: unless-stopped
     ports:
-      - "3001:3000"
+      - "3002:3000"
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin

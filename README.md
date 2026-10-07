@@ -61,7 +61,7 @@ docker compose up --build -d
 | **Health Check** | [http://localhost:5000/health](http://localhost:5000/health) | Container health probe |
 | **Prometheus Metrics** | [http://localhost:5000/metrics](http://localhost:5000/metrics) | Scrape endpoint |
 | **Prometheus UI** | [http://localhost:9091](http://localhost:9091) | PromQL queries |
-| **Grafana UI** | [http://localhost:3001](http://localhost:3001) | Dashboards (`admin`/`admin`) |
+| **Grafana UI** | [http://localhost:3002](http://localhost:3002) | Dashboards (`admin`/`admin`) |
 
 ---
 

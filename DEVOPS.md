@@ -12,7 +12,7 @@ This guide details the complete DevOps, CI/CD, Containerization, and Observabili
 | **Backend API** | Node.js, Express, WebSockets (`ws`) | `5000` | REST API + real-time GPS telemetry stream |
 | **Metrics Exporter** | `prom-client` | `5000/metrics` | Prometheus metrics scrape endpoint |
 | **Prometheus Server** | Prometheus v2.51.0 | `9091` | Timeseries metric scraper and storage engine |
-| **Grafana Dashboard** | Grafana v10.4.0 | `3001` | Pre-provisioned visual dashboard with alerting |
+| **Grafana Dashboard** | Grafana v10.4.0 | `3002` | Pre-provisioned visual dashboard with alerting |
 | **CI/CD Automation** | Jenkins (`Jenkinsfile`) & GitHub Actions | - | Automated linting, test execution, container builds |
 | **Issue Management** | Jira Smart Commits (`FDA-*`) | - | Commit message tracking and issue status progression |
 
@@ -31,7 +31,7 @@ docker compose up --build -d
 - **Backend API**: [http://localhost:5000/api/restaurants](http://localhost:5000/api/restaurants)
 - **Prometheus Metrics**: [http://localhost:5000/metrics](http://localhost:5000/metrics)
 - **Prometheus UI**: [http://localhost:9091](http://localhost:9091)
-- **Grafana UI**: [http://localhost:3001](http://localhost:3001) *(Login: `admin` / `admin`)*
+- **Grafana UI**: [http://localhost:3002](http://localhost:3002) *(Login: `admin` / `admin`)*
 
 To stop all containers:
 ```bash
