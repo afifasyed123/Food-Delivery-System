@@ -8,7 +8,7 @@ This guide details the complete DevOps, CI/CD, Containerization, and Observabili
 
 | Component | Technology | Port | Description |
 |---|---|---|---|
-| **Frontend Web App** | Vite, Vanilla JS, CSS Glassmorphism, Nginx | `3000` | User ordering & Live GPS map tracking interface |
+| **Frontend Web App** | Vite, Vanilla JS, CSS Glassmorphism, Nginx | `4000` | User ordering & Live GPS map tracking interface |
 | **Backend API** | Node.js, Express, WebSockets (`ws`) | `5000` | REST API + real-time GPS telemetry stream |
 | **Metrics Exporter** | `prom-client` | `5000/metrics` | Prometheus metrics scrape endpoint |
 | **Prometheus Server** | Prometheus v2.51.0 | `9091` | Timeseries metric scraper and storage engine |
@@ -27,7 +27,7 @@ docker compose up --build -d
 ```
 
 ### Access URLs:
-- **Frontend App**: [http://localhost:3000](http://localhost:3000)
+- **Frontend App**: [http://localhost:4000](http://localhost:4000)
 - **Backend API**: [http://localhost:5000/api/restaurants](http://localhost:5000/api/restaurants)
 - **Prometheus Metrics**: [http://localhost:5000/metrics](http://localhost:5000/metrics)
 - **Prometheus UI**: [http://localhost:9091](http://localhost:9091)

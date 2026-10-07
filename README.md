@@ -56,7 +56,7 @@ docker compose up --build -d
 
 | Service | URL | Purpose |
 |---|---|---|
-| **Frontend Web App** | [http://localhost:3000](http://localhost:3000) | Main UI & GPS tracking |
+| **Frontend Web App** | [http://localhost:4000](http://localhost:4000) | Main UI & GPS tracking |
 | **Backend REST API** | [http://localhost:5000](http://localhost:5000) | Core API endpoints |
 | **Health Check** | [http://localhost:5000/health](http://localhost:5000/health) | Container health probe |
 | **Prometheus Metrics** | [http://localhost:5000/metrics](http://localhost:5000/metrics) | Scrape endpoint |
