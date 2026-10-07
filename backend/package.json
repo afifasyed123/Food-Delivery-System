@@ -1,0 +1,22 @@
+{
+  "name": "food-delivery-backend",
+  "version": "1.0.0",
+  "description": "Food Delivery System Backend API with WebSockets and Prometheus Metrics",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "prom-client": "^15.1.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
