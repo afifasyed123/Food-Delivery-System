@@ -639,7 +639,7 @@ function renderDevOpsView(container) {
 
       <div class="metric-card">
         <div class="metric-card-title">Prometheus Endpoint</div>
-        <div class="metric-card-value" style="font-size: 1.4rem; color: #facc15;">Port 9090 / 5000</div>
+        <div class="metric-card-value" style="font-size: 1.4rem; color: #facc15;">Port 9091 / 5000</div>
         <div class="metric-card-sub"><a href="${API_BASE}/metrics" target="_blank" style="color: var(--accent-cyan); text-decoration: none;">View Raw /metrics ↗</a></div>
       </div>
     </div>
@@ -659,7 +659,7 @@ function renderDevOpsView(container) {
         </div>
         <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
           <div style="font-weight: 700; color: #f59e0b; margin-bottom: 0.3rem;">📈 Prometheus Server</div>
-          <div style="font-size: 0.85rem; color: var(--text-muted);">Scrapes <code>backend:5000/metrics</code> every 5 seconds (Port 9090)</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Scrapes <code>backend:5000/metrics</code> every 5 seconds (Port 9091)</div>
         </div>
         <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
           <div style="font-weight: 700; color: var(--accent-green); margin-bottom: 0.3rem;">📊 Grafana Dashboards</div>
