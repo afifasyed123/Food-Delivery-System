@@ -7,6 +7,8 @@ const connectedClients = new Set();
 /**
  * Initialize GPS tracking simulation for an order
  */
+const intervals = new Map();
+
 function startTrackingOrder(order) {
   const startLat = order.restaurantLocation.lat;
   const startLng = order.restaurantLocation.lng;
@@ -55,6 +57,7 @@ function startTrackingOrder(order) {
       
       // Stop interval and record duration metric
       clearInterval(intervalId);
+      intervals.delete(order.id);
       const durationSeconds = (Date.now() - tracker.startTime) / 1000;
       metrics.orderDeliveryDurationSeconds.observe(durationSeconds);
       metrics.activeOrdersGauge.dec();
@@ -63,7 +66,11 @@ function startTrackingOrder(order) {
     broadcastTrackingUpdate(order.id, tracker);
   }, 2500);
 
-  tracker.intervalId = intervalId;
+  if (intervalId && typeof intervalId.unref === 'function') {
+    intervalId.unref();
+  }
+
+  intervals.set(order.id, intervalId);
   return tracker;
 }
 
