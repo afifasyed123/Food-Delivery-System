@@ -281,7 +281,7 @@ function renderRestaurantsGrid() {
             <div class="menu-item-card">
               <div class="item-left">
                 <div class="item-title">${item.name}</div>
-                <div class="item-price">$${item.price.toFixed(2)}</div>
+                <div class="item-price">₹${item.price.toFixed(2)}</div>
               </div>
               <button class="btn-add" onclick="window.addToCart('${r.id}', '${item.id}')">
                 + Add
@@ -393,12 +393,12 @@ function renderTrackingView(container) {
             ${activeOrder.items.map(i => `
               <div style="display: flex; justify-content: space-between;">
                 <span>${i.quantity}x ${i.name}</span>
-                <span style="font-weight: 700;">$${i.itemTotal.toFixed(2)}</span>
+                <span style="font-weight: 700;">₹${i.itemTotal.toFixed(2)}</span>
               </div>
             `).join('')}
             <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border-light); padding-top: 0.6rem; font-weight: 900; font-size: 1rem;">
               <span>Total Paid</span>
-              <span style="color: var(--accent);">$${activeOrder.total.toFixed(2)}</span>
+              <span style="color: var(--accent);">₹${activeOrder.total.toFixed(2)}</span>
             </div>
           </div>
         </div>
@@ -613,8 +613,8 @@ function renderCartModal() {
   if (!modal) return;
 
   const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const deliveryFee = cart.length > 0 ? 2.99 : 0;
-  const tax = +(subtotal * 0.08).toFixed(2);
+  const deliveryFee = cart.length > 0 ? 40 : 0;
+  const tax = +(subtotal * 0.05).toFixed(2);
   const total = +(subtotal + deliveryFee + tax).toFixed(2);
 
   modal.innerHTML = `
@@ -635,7 +635,7 @@ function renderCartModal() {
             <div class="receipt-row">
               <div>
                 <div style="font-weight: 700; font-size: 0.95rem;">${i.name}</div>
-                <div style="font-size: 0.82rem; color: var(--text-muted);">$${i.price.toFixed(2)} each</div>
+                <div style="font-size: 0.82rem; color: var(--text-muted);">₹${i.price.toFixed(2)} each</div>
               </div>
               <div style="display: flex; align-items: center; gap: 0.6rem;">
                 <button class="qty-control-btn" onclick="window.changeCartQty('${i.itemId}', -1)">-</button>
@@ -650,19 +650,19 @@ function renderCartModal() {
         <div class="receipt-summary">
           <div style="display: flex; justify-content: space-between;">
             <span>Subtotal</span>
-            <span>$${subtotal.toFixed(2)}</span>
+            <span>₹${subtotal.toFixed(2)}</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
             <span>Delivery Fee</span>
-            <span>$${deliveryFee.toFixed(2)}</span>
+            <span>₹${deliveryFee.toFixed(2)}</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
-            <span>Estimated Tax (8%)</span>
-            <span>$${tax.toFixed(2)}</span>
+            <span>Estimated Tax (5% GST)</span>
+            <span>₹${tax.toFixed(2)}</span>
           </div>
           <div class="summary-total">
             <span>Total</span>
-            <span style="color: var(--accent);">$${total.toFixed(2)}</span>
+            <span style="color: var(--accent);">₹${total.toFixed(2)}</span>
           </div>
         </div>
 

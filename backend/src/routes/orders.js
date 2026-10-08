@@ -78,7 +78,7 @@ router.post('/', (req, res) => {
       };
     });
 
-    const deliveryFee = parseFloat(restaurant.deliveryFee.replace('$', '')) || 2.99;
+    const deliveryFee = parseFloat(restaurant.deliveryFee.replace(/[^0-9.]/g, '')) || 40;
     const tax = +(subtotal * 0.08).toFixed(2);
     const total = +(subtotal + deliveryFee + tax).toFixed(2);
 
